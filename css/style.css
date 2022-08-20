@@ -6,78 +6,107 @@ body {
     background-color: white;
     height: 100vh;
 }
-div{
-    background-color: lightblue;
-    padding: 10px;
-    margin: 1px;
-    border: 1px solid darkblue;
-}
+
 .calculator {
     display:flex;
     flex-direction: column;
-    border-radius: 10px;
     width: 500px;
     margin: 10px;
+    border: 2px solid darkblue;
+    border-radius: 10px;
 }
 
 /* flexboxes */
 .display{
     display: block;
     text-align: right;
-    line-height: 2em;
+    line-height: 1.5em;
     font-size: 3rem;
-    margin: 0;
-    padding: 0;
-
+    margin: 5px;
+    padding: 10;
+    border: 2px solid darkblue;
+    border: 2px solid darkblue;
+    border-radius: 10px;
+    
+}
+.displayNumbers {
+    padding-right: 15px;
+    
 }
 .keyboard {
     display: flex;
     flex-direction: column;
-    margin: 0;
-    padding: 0;
+    margin: 5px;
+    padding: 10;
     
 }
 .blockOne {
     display: flex;
     flex-direction: row;
+    margin: 0 0 10px 0;
+    padding: 0;
+    gap: 10px;
+}
+.blockOneLeft {
+    display: flex;
+    flex-direction: row;
+    width: 76%;
+    margin: 0;
+    padding: 0;
+    gap: 10px;
+}
+.blockOneRight {
+    display: flex;
+    width: 24%;
     margin: 0;
     padding: 0;
 }
+
 .blockTwo {
     display: flex;
     flex-direction: row;
     margin: 0;
     padding: 0;
+    gap: 10px 10px;
+    
 }
 .blockTwoLeft {
     display: flex;
     flex-direction: column;
-    width: 75%;
+    width: 76%;
     margin: 0;
     padding: 0;
 }
 .blockTwoRight {
     display: flex;
-    width: 25%;
-    margin: 0;
+    width: 24%;
+    margin: 0 0 10px 0;
     padding: 0;
 }
 .row {
     display: flex;
     flex-direction: row;
-    margin: 0;
+    margin: 0 0 10px 0;
     padding: 0;
-
+    gap: 10px;
+    
 }
 
 /* button formatting */
 .btn {
     display: block;
-    height: 10vh;
+    height: 70px;
+    margin: auto;
+    border: 2px solid darkblue;
+    border-radius: 10px;
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 15px;
+
 }
 .btn-operator {
     background-color: #dddddd;
-    width: 25%;
+    width: 100%;
 }
 .btn-nums, .btn-decimal, .btn-clear {
     background-color: #f9f9f9;
@@ -88,5 +117,3 @@ div{
     height: 100%;
     width: 100%;
 }
-
-
