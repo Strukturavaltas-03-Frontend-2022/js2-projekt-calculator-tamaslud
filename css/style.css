@@ -11,9 +11,41 @@ div{
     padding: 10px;
     margin: 5px;
     border: 2px solid black;
-
 }
 .calculator {
     display: flex;
+    flex-direction: column;
     border-radius: 1%;
 }
+.display{
+    display: block;
+
+}
+.keyboard {
+    display: flex;
+    flex-direction: column;
+}
+.blockOne {
+    display: flex;
+    flex-direction: row;
+}
+.blockTwo {
+    display: flex;
+    flex-direction: row;
+
+}
+.blockTwoLeft {
+    display: flex;
+    flex-direction: column;
+}
+.blockTwoRight {
+    display: flex;
+
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+
