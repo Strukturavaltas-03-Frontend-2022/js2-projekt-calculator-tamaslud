@@ -9,43 +9,84 @@ body {
 div{
     background-color: lightblue;
     padding: 10px;
-    margin: 5px;
-    border: 2px solid black;
+    margin: 1px;
+    border: 1px solid darkblue;
 }
 .calculator {
-    display: flex;
+    display:flex;
     flex-direction: column;
-    border-radius: 1%;
+    border-radius: 10px;
+    width: 500px;
+    margin: 10px;
 }
+
+/* flexboxes */
 .display{
     display: block;
+    text-align: right;
+    line-height: 2em;
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
 
 }
 .keyboard {
     display: flex;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
+    
 }
 .blockOne {
     display: flex;
     flex-direction: row;
+    margin: 0;
+    padding: 0;
 }
 .blockTwo {
     display: flex;
     flex-direction: row;
-
+    margin: 0;
+    padding: 0;
 }
 .blockTwoLeft {
     display: flex;
     flex-direction: column;
+    width: 75%;
+    margin: 0;
+    padding: 0;
 }
 .blockTwoRight {
     display: flex;
-
+    width: 25%;
+    margin: 0;
+    padding: 0;
 }
 .row {
     display: flex;
     flex-direction: row;
-    
+    margin: 0;
+    padding: 0;
+
+}
+
+/* button formatting */
+.btn {
+    display: block;
+    height: 10vh;
+}
+.btn-operator {
+    background-color: #dddddd;
+    width: 25%;
+}
+.btn-nums, .btn-decimal, .btn-clear {
+    background-color: #f9f9f9;
+    width: 33.3%;
+}
+.btn-equals {
+    background-color: #4d90fd;
+    height: 100%;
+    width: 100%;
 }
 
 
