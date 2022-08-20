@@ -1,0 +1,9 @@
+* {
+    box-sizing: border-box;
+    margin: auto;
+}
+body {
+    display: flex;
+    background-color: white;
+    height: 100vh;
+}
