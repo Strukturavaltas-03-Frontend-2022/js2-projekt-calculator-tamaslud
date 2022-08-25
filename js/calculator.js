@@ -15,6 +15,9 @@ const displayNumbers = document.querySelector('.displayDigits');
 const clearScreen = function() {
         accu = '';
         displayNumbers.innerHTML='0';
+        removeEqualsButtonListener();
+        removeDecimalButtonListener();
+        removeOperatorButtonsListener();
         addDecimalButtonListener();
     }
 
@@ -25,15 +28,21 @@ const addDecimal = function() {
 }
 
 const calcResult = function() {
-    accu += '='
+    accu += '=';
     displayNumbers.innerHTML=accu;
     removeEqualsButtonListener();
     removeDecimalButtonListener();
 }
 
-const buttonEventHandler = function(button) {
-    accu += button
+const numButtonEventHandler = function(button) {
+    accu += button;
     displayNumbers.innerHTML=accu;
+}
+
+const operatorButtonEventHandler = function(button) {
+    accu += button;
+    displayNumbers.innerHTML=accu;
+    removeOperatorButtonsListener();
 }
 
 
@@ -59,25 +68,34 @@ const removeEqualsButtonListener = () => {
 const addOperatorButtonsListener = () => {    
     for (let i = 0; i < operatorButtons.length; i += 1) {
          operatorButtons[i].addEventListener("click", () => 
-         buttonEventHandler(operatorButtons[i].getAttribute("data-btn"))
-         );
+         operatorButtonEventHandler(operatorButtons[i].getAttribute("data-btn")));
+        };
+    };
+const removeOperatorButtonsListener = () => {    
+    for (let i = 0; i < operatorButtons.length; i += 1) {
+         operatorButtons[i].removeEventListener("click", 
+         operatorButtonEventHandler);
         };
     };
 //
 const addNumButtonsListener = () => {    
     for (let i = 0; i < numButtons.length; i += 1) {
          numButtons[i].addEventListener("click", () => 
-         {buttonEventHandler(numButtons[i].getAttribute("data-btn"));}
+         {numButtonEventHandler(numButtons[i].getAttribute("data-btn"));}
          );
         };
-    //addOperatorButtonsListener();
+    };
+const removeNumButtonsListener = () => {    
+    for (let i = 0; i < numButtons.length; i += 1) {
+         numButtons[i].removeEventListener("click", () => {numButtonEventHandler});
+        };
     };
 
 
-
-clearScreen();
 addClearButtonListener();
 addDecimalButtonListener();
 addNumButtonsListener();
 addOperatorButtonsListener();
+removeOperatorButtonsListener();
+
 addEqualsButtonListener();
