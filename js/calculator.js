@@ -8,7 +8,6 @@ const decimalButton = document.querySelectorAll('div.calculator .btn-decimal');
 
 let stringToDisplay = '';
 let lastOperand;
-let accu;
 let enabledButtons;
 //enabledButtons = ['0','1','2', '3', '4', '5', '6', '7', '8', '9', '.', '+', '-', 'x', '/', 'c', '=']
 
@@ -19,7 +18,6 @@ const displayNumbers = document.querySelector('.displayDigits');
 const clearScreen = function() {
     stringToDisplay = '0';
     lastOperand = '0';
-    accu = 0;
     enabledButtons = ['1','2', '3', '4', '5', '6', '7', '8', '9', '.', 'c', '=']
     displayNumbers.innerHTML='0';
     }
@@ -68,10 +66,15 @@ const calcResult = () => {
             let operandB = blocks.shift();
             operandA = evaluate(operandA, operator, operandB);
         }
-        stringToDisplay = operandA;
-        lastOperand = operandA;
-        displayNumbers.innerHTML=stringToDisplay;
-        enabledButtons = ['+', '-', 'x', '/', 'c', '='];
+        if (operandA == Infinity) {
+            displayNumbers.innerHTML='Division by Zero Error';
+            stringToDisplay = '0';
+            lastOperand = '0';
+        } else {
+            stringToDisplay = operandA;
+            lastOperand = operandA;
+            displayNumbers.innerHTML=stringToDisplay;
+        }
     }
 }
 

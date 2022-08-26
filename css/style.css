@@ -8,6 +8,7 @@
 body {
     background-color: white;
     height: 100vh;
+    padding: 5px;
 }
 
 .calculator {
@@ -23,21 +24,17 @@ body {
 
 /* flexboxes */
 .display{
-    display: block;
+    display: inline-block;
     height: 5rem;
     text-align: right;
     line-height: 2rem;
     font-size: 1.5rem;
     font-family: monospace;
     margin: 5px;
-    padding: 10;
     border: 3px solid gray;
     border-radius: 10px;
 }
-.displayNumbers {
-    padding-right: 15px;
 
-}
 .keyboard {
     display: flex;
     flex-direction: column;
